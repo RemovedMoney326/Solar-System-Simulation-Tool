@@ -1,0 +1,44 @@
+Description
+----------------------------------------------------------------------------------
+Solar System Simulation Tool based on Python 3 using a TraitsUI based GUI and Mayavi to control and create a simulated 3D plot of any number of objects in the solar system. Uses NASAs JPL Horizon data for the initial conditions of any of the +1.2 million available objects. Based on the code of the Jupyter Notebook sharing the same name, using a vectorized Leap-Frog integrator and newtonian gravity.
+
+Dependencies
+----------------------------------------------------------------------------------
+This Script requires the following packages/dependencies:
+-numpy
+-scipy
+-time
+-astropy
+-astroquery
+-traits
+-traitsui
+-PyQt4
+-Mayavi
+
+Copyright
+----------------------------------------------------------------------------------
+Software Usage Conditions:
+This software is distributed unter the MIT license. Use at your own risk, and feel free to modify or distribute it for any non-commercial purposes.
+
+Guide
+----------------------------------------------------------------------------------
+Overall Use Sequence:
+Select your desired simulation settings upon starting the program. Then, check "Run Simulation" to run the simulation upon clicking OK and have a Mayavi 3D scene with the plotted results opened automatically. Close this window to return to the simulation settings window and either select a new configuration or close it with "Run Simulation" unchecked to terminate the program.
+
+Functions:
+
+-Simulated Objects: Selects which objects to include in the simulation as standard. Defaults to only the Sun, but may also additionally include the inner planets, the outer planets or both.
+
+-Timestep (days): Select the timestep in days for the integration algorithm behind the simulation. Lower values provide more accuracy at the cost of increased computing time, whereas higher values 
+shorten the required computational resources at the cost of less accuracy. A ratio of roughly 1 extra day timestep every 10 years of total simulation time is recommended.
+
+-Horizons IDs: Add any number of additional objects to the simulation by writing their NASA Horizons IDs (Link: https://ssd.jpl.nasa.gov/horizons/app.html) in this list. You can add and remove entries to this list by clicking the small button on the right of the input field. If an ID is not valid, it will be printed on the python consoles output and ignored during the simulation.
+
+-Select Range of Dates for the Simulation: Pick 2 dates from the interactive calendar to mark the starting and ending dates of the simulation. If 3 or more are selected, then only the lowest and highest value will be picked as the start and end dates by the program.
+
+Checks:
+
+-Run Simulation: Check to run the simulation and display it on a Mayavi scene upon clicking the OK button or closing the current window. Uncheck to terminate the program without running any further simulations upon clicking OK or closing the window.
+
+-Save 3D Plot: Check to save the computed simulation as a JPEG in the SSS_Exports folder. May sometimes choose a buggy perspective, but works as intended most of the time.
+
